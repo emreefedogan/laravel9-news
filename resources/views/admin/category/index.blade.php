@@ -20,31 +20,40 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Vertical Form</h5>
+                <h5 class="card-title">Category List</h5>
 
-                <!-- Vertical Form -->
-                <form class="row g-3">
-                    <div class="col-12">
-                        <label for="inputNanme4" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="inputNanme4">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputEmail4" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputPassword4" class="form-label">Password</label>
-                        <input type="password" class="form-control" id="inputPassword4">
-                    </div>
-                    <div class="col-12">
-                        <label for="inputAddress" class="form-label">Address</label>
-                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                        <button type="reset" class="btn btn-secondary">Reset</button>
-                    </div>
-                </form><!-- Vertical Form -->
+                <table class="table table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Keywords</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Show</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach($data as $rs)
+                    <tr>
+                        <th scope="row">{{$rs->id}}</th>
+                        <td>{{$rs->title}}</td>
+                        <td>{{$rs->keywords}}</td>
+                        <td>{{$rs->description}}</td>
+                        <td>{{$rs->image}}</td>
+                        <td>{{$rs->status}}</td>
+                        <td><a href="/admin/category/edit{{$rs->id}}/" class="btn btn-primary"> Edit </a></td>
+                        <td><a href="/admin/category/delete{{$rs->id}}/" class="btn btn-danger" > Delete </a></td>
+                        <td><a href="/admin/category/show{{$rs->id}}/" class="btn btn-success"> Show </a></td>
+                    </tr>
+                    @endforeach
+                    </tbody>
+                </table>
+
+
 
             </div>
         </div>

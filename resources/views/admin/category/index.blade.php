@@ -17,6 +17,7 @@
             </nav>
         </div><!-- End Page Title -->
 
+        <a href="/admin/category/create/" class="btn btn-dark"> +  Add Category </a>
 
         <div class="card">
             <div class="card-body">
@@ -46,7 +47,8 @@
                         <td>{{$rs->image}}</td>
                         <td>{{$rs->status}}</td>
                         <td><a href="/admin/category/edit/{{$rs->id}}/" class="btn btn-primary"> Edit </a></td>
-                        <td><a href="/admin/category/delete/{{$rs->id}}/" class="btn btn-danger" > Delete </a></td>
+                        <td><a href="/admin/category/destroy/{{$rs->id}}/" class="btn btn-danger"
+                               onclick="return confirm('Deleting Are You Sure ?')"> Delete </a></td>
                         <td><a href="/admin/category/show/{{$rs->id}}/" class="btn btn-success"> Show </a></td>
                     </tr>
                     @endforeach

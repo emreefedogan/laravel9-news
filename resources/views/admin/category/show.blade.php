@@ -10,15 +10,15 @@
             <h1>{{$data->title}}</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item">Pages</li>
                     <li class="breadcrumb-item active">{{$data->title}}</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
 
-        <a href="/admin/category/edit/{{$data->id}}/" class="btn btn-primary"> Edit Category </a>
-        <a href="/admin/category/destroy/{{$data->id}}/" class="btn btn-danger"> Delete Category </a>
+        <a href="{{route('admin.category.edit',['id'=>$data->id])}}" class="btn btn-primary"> Edit Category </a>
+        <a href="{{route('admin.category.destroy',['id'=>$data->id])}}" class="btn btn-danger"> Delete Category </a>
 
 
         <div class="card">

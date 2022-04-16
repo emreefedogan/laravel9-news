@@ -10,14 +10,14 @@
             <h1>Category List</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item">Pages</li>
                     <li class="breadcrumb-item active">Category List</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
 
-        <a href="/admin/category/create/" class="btn btn-dark"> +  Add Category </a>
+        <a href="{{route('admin.category.create')}}" class="btn btn-dark"> +  Add Category </a>
 
         <div class="card">
             <div class="card-body">
@@ -44,12 +44,18 @@
                         <td>{{$rs->title}}</td>
                         <td>{{$rs->keywords}}</td>
                         <td>{{$rs->description}}</td>
-                        <td>{{$rs->image}}</td>
+                        <td>
+                            @if($rs->image)
+                                <img src="{{Storage::url($rs->image)}}" style="height: 50px">
+
+                            @endif
+
+                        </td>
                         <td>{{$rs->status}}</td>
-                        <td><a href="/admin/category/edit/{{$rs->id}}/" class="btn btn-primary"> Edit </a></td>
-                        <td><a href="/admin/category/destroy/{{$rs->id}}/" class="btn btn-danger"
+                        <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary"> Edit </a></td>
+                        <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger"
                                onclick="return confirm('Deleting Are You Sure ?')"> Delete </a></td>
-                        <td><a href="/admin/category/show/{{$rs->id}}/" class="btn btn-success"> Show </a></td>
+                        <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-success"> Show </a></td>
                     </tr>
                     @endforeach
                     </tbody>

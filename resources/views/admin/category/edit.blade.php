@@ -22,7 +22,7 @@
                 <h5 class="card-title">Category Elements</h5>
 
                 <!-- Vertical Form -->
-                <form class="row g-3" action="/admin/category/update/{{$data->id}}" method="POST">
+                <form class="row g-3" action="{{route('admin.category.update',['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-12">
                         <label for="title" class="form-label">Title</label>

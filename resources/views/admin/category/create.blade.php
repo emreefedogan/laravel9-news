@@ -10,7 +10,7 @@
             <h1>Add Category</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item">Pages</li>
                     <li class="breadcrumb-item active">Add Category</li>
                 </ol>
@@ -22,7 +22,7 @@
                 <h5 class="card-title">Category Elements</h5>
 
                 <!-- Vertical Form -->
-                <form class="row g-3" action="/admin/category/store" method="POST">
+                <form class="row g-3" action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="col-12">
                         <label for="title" class="form-label">Title</label>

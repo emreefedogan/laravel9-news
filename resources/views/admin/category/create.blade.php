@@ -23,8 +23,13 @@
 
                 <div class="card-body">
                     <h5 class="card-title"> Parent Category</h5>
-                    <select class="form-control select2" name="parent_id" style="">
-                        <option value="0" selected="selected">Main Category</option>
+
+                    <!-- Vertical Form -->
+                    <form class="row g-3" action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
+
+                    <select class="form-control select2" name="parent_id">
+                        <option value="0" selected="selected"  >Main Category</option>
 
                         @foreach($data as $rs)
                             <option value="{{$rs->id}}">{{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</option>
@@ -34,9 +39,7 @@
 
                  <h5 class="card-title">Category Elements</h5>
 
-                <!-- Vertical Form -->
-                <form class="row g-3" action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
-                    @csrf
+
                     <div class="col-12">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" name="title">

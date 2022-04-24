@@ -50,7 +50,13 @@
                     </tr>
                     <tr class="table-dark">
                         <th scope="row">Image :</th>
-                        <td></td>
+                        <td>
+                            @if($data->image)
+                                <img src="{{Storage::url($data->image)}}" style="height: 50px">
+
+                            @endif
+
+                        </td>
 
                     </tr>
                     <tr class="table-dark">

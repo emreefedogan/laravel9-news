@@ -10,7 +10,7 @@ class Category extends Model
     use HasFactory;
 
     protected $table='categories';
-     #one to many
+    #one to many
 
     public function parent(){
         return $this->belongsTo(Category::class, 'parent_id');

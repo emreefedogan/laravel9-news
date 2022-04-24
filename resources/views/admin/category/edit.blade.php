@@ -19,11 +19,27 @@
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Category Elements</h5>
-
+                <h5 class="card-title"> Parent Category</h5>
                 <!-- Vertical Form -->
                 <form class="row g-3" action="{{route('admin.category.update',['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
+
+                <select class="form-control select2" name="parent_id" style="">
+                    <option value="0" selected="selected" >Main Category</option>
+
+                    @foreach($datalist as $rs)
+
+                        <option value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif >
+                            {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
+                        </option>
+
+
+                    @endforeach
+                </select>
+
+                <h5 class="card-title">Category Elements</h5>
+
+
                     <div class="col-12">
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" name="title" value="{{$data->title}}">

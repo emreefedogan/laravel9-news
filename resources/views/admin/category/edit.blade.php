@@ -20,6 +20,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"> Parent Category</h5>
+
                 <!-- Vertical Form -->
                 <form class="row g-3" action="{{route('admin.category.update',['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf

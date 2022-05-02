@@ -16,14 +16,14 @@
             </a>
             <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
                 <li>
-                    <a href="components-alerts.html">
+                    <a href="/admin/news/create">
                         <i class="bi bi-circle"></i><span>New News</span>
                     </a>
                 </li>
                 <li>
 
 
-                  <a href="components-tooltips.html">
+                  <a href="/admin/news">
                         <i class="bi bi-circle"></i><span> News List</span>
                     </a>
                 </li>

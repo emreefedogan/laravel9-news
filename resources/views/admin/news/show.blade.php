@@ -65,6 +65,21 @@
 
                     </tr>
                     <tr class="table-dark">
+                        <th scope="row">Detail :</th>
+                        <td>{{$data->detail}}</td>
+
+                    </tr>
+                    <tr class="table-dark">
+                        <th scope="row">Type :</th>
+                        <td>{{$data->type}}</td>
+
+                    </tr>
+                    <tr class="table-dark">
+                        <th scope="row">Slug:</th>
+                        <td>{{$data->slug}}</td>
+
+                    </tr>
+                    <tr class="table-dark">
                         <th scope="row">Created Date :</th>
                         <td>{{$data->created_at}}</td>
 

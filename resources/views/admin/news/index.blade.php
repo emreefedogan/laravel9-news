@@ -7,12 +7,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Category List</h1>
+            <h1>News List</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item">Pages</li>
-                    <li class="breadcrumb-item active">Category List</li>
+                    <li class="breadcrumb-item active">News List</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->

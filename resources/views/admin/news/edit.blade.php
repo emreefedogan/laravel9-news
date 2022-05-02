@@ -7,12 +7,12 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>Edit Category : {{$data->title}}</h1>
+            <h1>Edit News : {{$data->title}}</h1>
             <nav>
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item">Pages</li>
-                    <li class="breadcrumb-item active">Edit Category :  {{$data->title}}</li>
+                    <li class="breadcrumb-item active">Edit News :  {{$data->title}}</li>
                 </ol>
             </nav>
         </div><!-- End Page Title -->
@@ -25,13 +25,13 @@
                 <form class="row g-3" action="{{route('admin.news.update',['id'=>$data->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
-                <select class="form-control select2" name="parent_id" style="">
+                <select class="form-control select2" name="category_id" style="">
                     <option value="0" selected="selected" >Main Category</option>
 
                     @foreach($datalist as $rs)
 
-                        <option value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif >
-                            {{\App\Http\Controllers\AdminPanel\AdminNewsController::getParentsTree($rs,$rs->title)}}
+                        <option value="{{$rs->id}}" @if ($rs->id == $data->category_id) selected="selected" @endif >
+                            {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}
                         </option>
 
 

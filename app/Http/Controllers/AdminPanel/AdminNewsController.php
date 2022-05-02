@@ -49,18 +49,21 @@ class AdminNewsController extends Controller
     {
         $data= new News();
 
-        $data->parent_id= $request->parent_id;
+        $data->category_id= $request->category_id;
+        $data->user_id= 0; //$request->category_id;
         $data->title= $request->title;
         $data->keywords= $request->keywords;
         $data->description= $request->description;
-        $data->status= $request->status;
         if($request->file('image'))
         {
             $data->image=$request->file('image')->store('images');
         }
+        $data->detail= $request->detail;
+        $data->type= $request->type;
+        $data->slug= $request->slug;
+        $data->status= $request->status;
         $data->save();
         return redirect('admin/news');
-
     }
 
     /**

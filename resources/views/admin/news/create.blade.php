@@ -25,10 +25,10 @@
                     <h5 class="card-title"> Parent Category</h5>
 
                     <!-- Vertical Form -->
-                    <form class="row g-3" action="{{route('admin.category.store')}}" method="POST" enctype="multipart/form-data">
+                    <form class="row g-3" action="{{route('admin.news.store')}}" method="POST" enctype="multipart/form-data">
                         @csrf
 
-                    <select class="form-control select2" name="parent_id">
+                    <select class="form-control select2" name="category_id">
                         <option value="0" selected="selected"  >Main Category</option>
 
                         @foreach($data as $rs)
@@ -44,6 +44,10 @@
                         <label for="title" class="form-label">Title</label>
                         <input type="text" class="form-control" name="title">
                     </div>
+                        <div class="col-12">
+                            <label for="keywords" class="form-label">Keywords</label>
+                            <input type="text" class="form-control" name="keywords">
+                        </div>
                     <div class="col-12">
                         <label for="description" class="form-label">Description</label>
                         <input type="text" class="form-control" name="description">
@@ -61,6 +65,13 @@
                         <div class="col-12">
                             <label for="slug" class="form-label">Slug</label>
                             <input type="text" class="form-control" name="slug">
+                        </div>
+
+                        <div class="col-12">
+                            <label for="inputNumber" class="col-sm-2 col-form-label">Choose Image File</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="file" name="image">
+                            </div>
                         </div>
 
                     <div class="col-12">

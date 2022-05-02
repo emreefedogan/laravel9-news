@@ -17,11 +17,11 @@
             </nav>
         </div><!-- End Page Title -->
 
-        <a href="{{route('admin.news.create')}}" class="btn btn-dark"> +  Add Category </a>
+        <a href="{{route('admin.news.create')}}" class="btn btn-dark"> +  Add News </a>
 
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Category List</h5>
+                <h5 class="card-title">News List</h5>
 
                 <table class="table table-dark">
                     <thead>
@@ -29,7 +29,6 @@
                         <th scope="col">Id</th>
                         <th scope="col">Parent</th>
                         <th scope="col">Title</th>
-
                         <th scope="col">Description</th>
                         <th scope="col">Image</th>
                         <th scope="col">Status</th>
@@ -42,7 +41,7 @@
                     @foreach($data as $rs)
                     <tr>
                         <th scope="row">{{$rs->id}}</th>
-                        <td> {{\App\Http\Controllers\AdminPanel\AdminNewsController::getParentsTree($rs,$rs->title)}}</td>
+                        <td> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                         <td>{{$rs->title}}</td>
 
                         <td>{{$rs->description}}</td>

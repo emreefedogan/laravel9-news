@@ -17,8 +17,8 @@
             </nav>
         </div><!-- End Page Title -->
 
-        <a href="{{route('admin.news.edit',['id'=>$data->id])}}" class="btn btn-primary"> Edit Category </a>
-        <a href="{{route('admin.news.destroy',['id'=>$data->id])}}" class="btn btn-danger"> Delete Category </a>
+        <a href="{{route('admin.news.edit',['id'=>$data->id])}}" class="btn btn-primary"> Edit News </a>
+        <a href="{{route('admin.news.destroy',['id'=>$data->id])}}" class="btn btn-danger"> Delete News </a>
 
 
         <div class="card">

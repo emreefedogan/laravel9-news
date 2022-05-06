@@ -12,11 +12,19 @@ class Category extends Model
     protected $table='categories';
     #one to many
 
+    public function news()
+    {
+        return $this->hasMany(News::class);
+
+    }
+
+
     public function parent(){
         return $this->belongsTo(Category::class, 'parent_id');
     }
 
     public function category(){
+
         return $this->hasMany(News::class);
 
     }

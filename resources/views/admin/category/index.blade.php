@@ -32,6 +32,7 @@
 
                         <th scope="col">Description</th>
                         <th scope="col">Image</th>
+
                         <th scope="col">Status</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -53,6 +54,7 @@
                             @endif
 
                         </td>
+
                         <td>{{$rs->status}}</td>
                         <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-primary"> Edit </a></td>
                         <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" class="btn btn-danger"

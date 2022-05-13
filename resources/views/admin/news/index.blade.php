@@ -31,6 +31,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Description</th>
                         <th scope="col">Image</th>
+                        <th scope="col">Image Gallery</th>
                         <th scope="col">Status</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -51,6 +52,12 @@
 
                             @endif
 
+                        </td>
+                        <td>
+
+                            <a href="{{route('admin.image.index',['nid'=>$rs->id])}}" class="btn btn-primary" onclick="return !window.open(this.href, ' ', 'toolbar=yes,scrollbars=yes,resizable=yes,top=50,left=100,width=1100,height=700')">
+                            <img src="{{asset("assets")}}/img/gallery.png" height="40px">
+                            </a>
                         </td>
                         <td>{{$rs->status}}</td>
                         <td><a href="{{route('admin.news.edit',['id'=>$rs->id])}}" class="btn btn-primary"> Edit </a></td>

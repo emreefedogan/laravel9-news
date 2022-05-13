@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
 use App\Http\Controllers\AdminPanel\AdminNewsController as AdminNewsController;
+use App\Http\Controllers\AdminPanel\ImageController as AdminImageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +55,17 @@ Route::prefix('/admin')->name('admin.')->group(function (){
         Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
         Route::get('/show/{id}', 'show')->name('show');
+
+    });
+
+    //**************ADMIN NEWS IMAGE GALLERY CONTROLLER**
+    Route::prefix('/image')->name('image.')->controller(AdminImageController::class)->group(function (){
+        Route::get('/{nid}','index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::post('/update/{nid}/{id}','update')->name('update');
+        Route::get('/destroy/{nid}/{id}', 'destroy')->name('destroy');
+
 
     });
 

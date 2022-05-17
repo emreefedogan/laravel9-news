@@ -35,6 +35,7 @@
     * Author: BootstrapMade.com
     * License: https://bootstrapmade.com/license/
     ======================================================== -->
+    @yield('head')
 </head>
 <body>
 @include("admin.header")
@@ -47,10 +48,7 @@
 
 @yield('content')
 
-
 @include("admin.footer")
-@section('footer')
 
-@show
-</body>
+@yield('foot')
 </html>

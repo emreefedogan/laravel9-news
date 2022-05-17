@@ -72,9 +72,10 @@
                         <td>{{$data->status}}</td>
 
                     </tr>
-                    <tr class="table-dark">
+
+                    <tr class="table-light">
                         <th scope="row">Detail :</th>
-                        <td>{{$data->detail}}</td>
+                        <td>{!! $data->detail !!}</td>
 
                     </tr>
                     <tr class="table-dark">

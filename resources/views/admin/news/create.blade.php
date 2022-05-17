@@ -56,11 +56,11 @@
                     </div>
                         <div class="col-12">
                             <label for="detail" class="form-label">Detail</label>
-                            <input type="text" class="form-control" name="detail">
+                            <textarea type="text" id="detail" class="form-control" name="detail"></textarea>
 
                             <script>
                                 ClassicEditor
-                                    .create( document.querySelector( '#editor' ) )
+                                    .create( document.querySelector( '#detail' ) )
                                     .then( editor => {
                                         console.log( editor );
                                     } )

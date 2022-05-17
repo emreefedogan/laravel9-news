@@ -1,7 +1,19 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Edit Category :  ',$data->title)
+@section('head')
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" crossorigin="anonymous"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
+@endsection
 
 @section('content')
     <main id="main" class="main">
@@ -54,6 +66,21 @@
                         <input type="text" class="form-control" name="description" value="{{$data->description}}">
                     </div>
                     <div class="col-12">
+                        <label for="Type" class="form-label">Type</label>
+                        <input type="text" class="form-control" name="type" value="{{$data->type}}">
+                    </div>
+                    <div class="col-12">
+                        <label for="Slug" class="form-label">Slug</label>
+                        <input type="text" class="form-control" name="slug" value="{{$data->slug}}">
+                    </div>
+                    <div class="col-12">
+                        <label for="textarea"  class="form-label">Detail</label>
+                        <textarea  class="textarea" id="detail" name="detail">{{$data->detail}}</textarea>
+
+                    </div>
+
+
+                    <div class="col-12">
                         <label for="inputNumber" class="col-sm-2 col-form-label">Choose Image File</label>
                         <div class="col-sm-10">
                             <input class="form-control" type="file" name="image" value="">
@@ -79,7 +106,19 @@
 
         </div>
         </div>
-    </main><!-- End #main -->
+
+        @endsection
+@section('foot')
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
 
+    <script>
+        $(function () {
+            $('.textarea').summernote()
+        })
+    </script>
 @endsection
+
+
+
+

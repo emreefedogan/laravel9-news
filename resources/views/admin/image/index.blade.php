@@ -19,7 +19,7 @@
                 <h5 class="card-title">{{$news->title}}</h5>
 <hr>
                 <!-- Vertical Form -->
-                <form class="row g-3" action="{{route('admin.image.store',['pid'=>$news->id])}}" method="POST" enctype="multipart/form-data">
+                <form class="row g-3" action="{{route('admin.image.store',['nid'=>$news->id])}}" method="POST" enctype="multipart/form-data">
                     @csrf
 
 
@@ -44,12 +44,6 @@
 
 
 
-                    <div class="text-center">
-                        <button type="submit" class="btn btn-primary">Save</button>
-
-                    </div>
-
-
 
                 </form><!-- Vertical Form -->
 
@@ -68,7 +62,6 @@
                         <th scope="col">Title</th>
                         <th scope="col">Image</th>
 
-                        <th scope="col">Update</th>
                         <th scope="col">Delete</th>
 
                     </tr>
@@ -77,10 +70,8 @@
                     @foreach($images as $rs)
                     <tr>
                         <th scope="row">{{$rs->id}}</th>
-                        <td> {{\App\Http\Controllers\AdminPanel\CategoryController::getParentsTree($rs,$rs->title)}}</td>
                         <td>{{$rs->title}}</td>
 
-                        <td>{{$rs->description}}</td>
                         <td>
                             @if($rs->image)
                                 <img src="{{Storage::url($rs->image)}}" style="height: 50px">
@@ -89,8 +80,7 @@
 
                         </td>
 
-                        <td><a href="{{route('admin.image.edit',['id'=>$rs->id])}}" class="btn btn-primary"> Update </a></td>
-                        <td><a href="{{route('admin.image.destroy',['id'=>$rs->id])}}" class="btn btn-danger"
+                        <td><a href="{{route('admin.image.destroy',['nid'=>$news->id,'id'=>$rs->id])}}" class="btn btn-danger"
                                onclick="return confirm('Deleting Are You Sure ?')"> Delete </a></td>
 
                     </tr>

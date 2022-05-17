@@ -1,7 +1,9 @@
 @extends('layouts.adminbase')
 
 @section('title', 'Add News Panel')
-
+@section('head')
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+@endsection
 
 @section('content')
     <main id="main" class="main">
@@ -55,6 +57,17 @@
                         <div class="col-12">
                             <label for="detail" class="form-label">Detail</label>
                             <input type="text" class="form-control" name="detail">
+
+                            <script>
+                                ClassicEditor
+                                    .create( document.querySelector( '#editor' ) )
+                                    .then( editor => {
+                                        console.log( editor );
+                                    } )
+                                    .catch( error => {
+                                        console.error( error );
+                                    } );
+                            </script>
                         </div>
 
                         <div class="col-12">

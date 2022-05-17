@@ -61,9 +61,7 @@ Route::prefix('/admin')->name('admin.')->group(function (){
     //**************ADMIN NEWS IMAGE GALLERY CONTROLLER**
     Route::prefix('/image')->name('image.')->controller(AdminImageController::class)->group(function (){
         Route::get('/{nid}','index')->name('index');
-        Route::get('/create', 'create')->name('create');
-        Route::post('/store', 'store')->name('store');
-        Route::post('/update/{nid}/{id}','update')->name('update');
+        Route::post('/store/{nid}', 'store')->name('store');
         Route::get('/destroy/{nid}/{id}', 'destroy')->name('destroy');
 
 

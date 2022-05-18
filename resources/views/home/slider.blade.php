@@ -8,7 +8,7 @@
                     @foreach($sliderdata as $rs)
                     <div class="col-md-6">
                         <div class="tn-img">
-                            <img src="{{Storage::url($rs->image)}}" />
+                            <img src="{{Storage::url($rs->image)}}" height="350px" />
                             <div class="tn-title">
                                 <a href="">{{$rs->title}}</a>
                             </div>

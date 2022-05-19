@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -16,6 +17,21 @@ class HomeController extends Controller
 
             'sliderdata'=>$sliderdata,
             'newslist1'=>$newslist1
+
+            ]
+
+        );
+    }
+
+    public function news($id)
+    {
+        $data=News::find($id);
+        $images=DB::table('images')->where('news_id',$id)->get();
+        return view('home.news',[
+
+                'data'=>$data,
+                'images' => $images,
+
 
             ]
 

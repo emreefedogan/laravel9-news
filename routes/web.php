@@ -24,9 +24,9 @@ Route::get('test', [HomeController::class,'test'])->name('test');
 //Route::get('home/{id}/{nr}',[HomeController::class,'index'])->name('home');
 //Route::post('/save',[HomeController::class,'save'])->name('save');
 //Route::get('/page',[HomeController::class,'page'])->name('page');
-
-
 //Route::get('/product/{id}/{slug}',[HomeController::class,'product'])->name('product');
+
+Route::get('/news/{id}',[HomeController::class,'news'])->name('news');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

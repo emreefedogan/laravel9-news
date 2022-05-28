@@ -351,9 +351,9 @@
                         @foreach($newslist1 as $rs)
                         <div class="col-md-4">
                             <div class="mn-img">
-                                <img src="{{Storage::url($rs->image)}}" />
+                                <img src="{{Storage::url($rs->image)}}" href="{{route('news',['id'=>$rs->id])}}" />
                                 <div class="mn-title">
-                                    <a href="">{{$rs->title}}</a>
+                                    <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
                                 </div>
                             </div>
                         </div>

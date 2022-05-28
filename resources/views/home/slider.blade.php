@@ -10,7 +10,7 @@
                         <div class="tn-img">
                             <img src="{{Storage::url($rs->image)}}" height="350px" />
                             <div class="tn-title">
-                                <a href="">{{$rs->title}}</a>
+                                <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="tn-img">
                             <img src="{{Storage::url($rs->image)}}" />
                             <div class="tn-title">
-                                <a href="">{{$rs->title}}</a>
+                                <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
                             </div>
                         </div>
                     </div>

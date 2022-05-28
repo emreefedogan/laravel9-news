@@ -9,6 +9,20 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    public static function categorynews($id)
+    {
+
+        $category=Category::find($id);
+        $news=DB::table('news')->where('category_id',$id)->get();
+        return view('home.categorynews',[
+
+            'category'=>$category,
+            'news'=>$news
+
+        ]
+        );
+
+    }
     public static function categorylist()
     {
         return Category::where('parent_id', '=', 0)->with('children')->get();

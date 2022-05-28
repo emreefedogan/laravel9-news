@@ -28,14 +28,14 @@
         <div class="row align-items-center">
             <div class="col-lg-3 col-md-4">
                 <div class="b-logo">
-                    <a href="index.html">
+                    <a href="{{route('home')}}">
                         <img src="{{asset("assets")}}/img/logo.png" alt="Logo">
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 col-md-4">
                 <div class="b-ads">
-                    <a href="https://htmlcodex.com">
+                    <a href="{{route('home')}}">
                         <img src="{{asset("assets")}}/img/ads-1.jpg" alt="Ads">
                     </a>
                 </div>
@@ -66,7 +66,7 @@
                $mainCategories= \App\Http\Controllers\HomeController::categorylist();
                 @endphp
                 <div class="navbar-nav mr-auto">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="{{route('home')}}" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
 

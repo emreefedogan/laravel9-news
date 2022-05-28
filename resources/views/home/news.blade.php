@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Test Title')
+@section('title', $data->title , 'News')
 
 
 

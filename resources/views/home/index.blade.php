@@ -1,6 +1,6 @@
 @extends('layouts.home')
 
-@section('title', 'Test Title')
+@section('title', 'News The Best News Website')
 
 
 @section('slider')

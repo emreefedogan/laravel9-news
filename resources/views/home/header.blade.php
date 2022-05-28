@@ -62,12 +62,19 @@
             </button>
 
             <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                @php
+               $mainCategories= \App\Http\Controllers\HomeController::categorylist();
+                @endphp
                 <div class="navbar-nav mr-auto">
                     <a href="index.html" class="nav-item nav-link active">Home</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Dropdown</a>
+
                         <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Sub Item 1</a>
+
+                            @foreach($mainCategories as $rs)
+                            <a href="{{route('categorynews',['id'=>$rs->id, 'slug'=>$rs->title])}}" class="dropdown-item">{{$rs->title}}</a>
+                            @endforeach
                             <a href="#" class="dropdown-item">Sub Item 2</a>
                         </div>
                     </div>

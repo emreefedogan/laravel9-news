@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\News;
+use App\Models\Settings;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -32,11 +33,12 @@ class HomeController extends Controller
     {
         $sliderdata=News::limit(4)->get();
         $newslist1=News::limit(6)->get();
+        $setting=Settings::first();
         return view('home.index',[
 
             'sliderdata'=>$sliderdata,
-            'newslist1'=>$newslist1
-
+            'newslist1'=>$newslist1,
+            'setting'=>$setting,
             ]
 
         );

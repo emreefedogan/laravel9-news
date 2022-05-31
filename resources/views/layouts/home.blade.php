@@ -6,10 +6,11 @@
 
     <title> News Title - @yield('title')</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Bootstrap News Template - Free HTML Templates" name="keywords">
-    <meta content="Bootstrap News Template - Free HTML Templates" name="description">
-
+    <meta name="description" content="@yield('description')">
+    <meta name="keywords" content="@yield('keyword')">
+    <meta name="author" content="Emre Dogan">
     <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="@yield('icon')">
     <link href="{{asset("assets")}}/img/favicon.ico" rel="icon">
 
     <!-- Google Fonts -->

@@ -32,11 +32,16 @@ Route::get('/categorynews/{id}/{slug}',[HomeController::class,'categorynews'])->
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+
 //**************ADMIN PANEL CONTROLLER**
 Route::prefix('/admin')->name('admin.')->group(function (){
 
- Route::get('/', [AdminHomeController::class,'index'])->name('index');
-//**************ADMIN CATEGORY CONTROLLER**
+        Route::get('/', [AdminHomeController::class,'index'])->name('index');
+//**************General Routes CONTROLLER**
+        Route::get('/setting', [AdminHomeController::class,'setting'])->name('setting');
+        Route::post('/setting', [AdminHomeController::class,'settingupdate'])->name('setting.update');
+ //**************ADMIN CATEGORY CONTROLLER**
     Route::prefix('/category')->name('category.')->controller(AdminCategoryController::class)->group(function (){
         Route::get('/','index')->name('index');
         Route::get('/create', 'create')->name('create');

@@ -59,7 +59,7 @@
                     </div>
                     <div class="col-12">
                         <label for="keywords" class="form-label">Keywords</label>
-                        <input type="text" class="form-control" name="keywords" value="{{$data->keywords}}">
+                        <input type="text" class="form-control" name="keywords" value="{{$data->keyword}}">
                     </div>
                     <div class="col-12">
                         <label for="description" class="form-label">Description</label>

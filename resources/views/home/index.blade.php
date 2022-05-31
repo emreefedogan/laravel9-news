@@ -1,6 +1,9 @@
 @extends('layouts.home')
 
-@section('title', 'News The Best News Website')
+@section('title', $setting->title)
+@section('description', $setting->description)
+@section('keyword', $setting->keyword)
+@section('icon', Storage::url($setting->icon))
 
 
 @section('slider')

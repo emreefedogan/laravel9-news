@@ -1,7 +1,7 @@
 @extends('layouts.home')
 
 
-@section('title', 'About Us | ' .   $setting->title)
+@section('title', 'References | ' .   $setting->title)
 @section('description', $setting->description)
 @section('keyword', $setting->keyword)
 @section('icon', Storage::url($setting->icon))
@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-lg-9">
                 <div class="row">
-                    {!! $setting->aboutus !!}
+                    {!! $setting->references !!}
 
 
                 </div>
             </div>
         </div>  </div>  </div>
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 @endsection

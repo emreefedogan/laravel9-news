@@ -46,7 +46,7 @@ class HomeController extends Controller
 
     public function about()
     {
-      echo 'About';
+
         $setting=Settings::first();
         return view('home.about',[
 
@@ -58,7 +58,7 @@ class HomeController extends Controller
     }
     public function references()
     {
-        echo 'References';
+
         $setting=Settings::first();
         return view('home.references',[
 
@@ -70,7 +70,7 @@ class HomeController extends Controller
     }
     public function contact()
     {
-        echo 'Contact';
+
         $setting=Settings::first();
         return view('home.contact',[
 

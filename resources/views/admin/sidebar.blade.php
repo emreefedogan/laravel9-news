@@ -54,18 +54,18 @@
         </li><!-- End Contact Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/admin/faq">
+            <a class="nav-link collapsed" href="{{route('admin.faq.index')}}">
                 <i class="bi bi-question-circle"></i>
                 <span>F.A.Q</span>
             </a>
-        </li><!-- End F.A.Q Page Nav -->
+        </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/admin/messages">
+            <a class="nav-link collapsed" href="{{route('admin.message.index')}}">
                 <i class="bx bxs-message-square-edit"></i>
                 <span>Messages</span>
             </a>
-        </li><!-- End F.A.Q Page Nav -->
+        </li>
 
 
 

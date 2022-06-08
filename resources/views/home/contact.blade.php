@@ -25,24 +25,27 @@
                             <div class="row align-items-center">
                                 <div class="col-md-8">
                                     <div class="contact-form">
-                                        <form>
+
+                                        @include('home.messages')
+                                        <form action="{{route("storemessage")}}" method="post">
+                                            @csrf
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <input type="text" class="form-control" placeholder="Your Name" />
+                                                    <input type="text" class="form-control" name="name" placeholder="Name & Surname" />
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <input type="email" class="form-control" placeholder="Your Email" />
+                                                    <input type="email" class="form-control" name="email" placeholder="Your Email" />
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <input type="tel" class="form-control" placeholder="Tel" />
+                                                <input type="tel" class="form-control" name="phone" placeholder="Phone Number" />
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" class="form-control" placeholder="Subject" />
+                                                <input type="text" class="form-control" name="subject" placeholder="Subject" />
                                             </div>
 
                                             <div class="form-group">
-                                                <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+                                                <textarea class="form-control" rows="5" name="message" placeholder="Message"></textarea>
                                             </div>
                                             <div><button class="btn" type="submit">Send Message</button></div>
                                         </form>

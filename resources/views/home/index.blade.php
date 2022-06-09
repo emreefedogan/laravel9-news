@@ -23,7 +23,7 @@
                 <div class="col-md-12" style="align: center">
 
 
-                    <h2>SON DAKIKA HABERLER</h2>
+                    <h2>LASTEST NEWS</h2>
                        <div class="row cn-slider">
                             @foreach($newslist1 as $orta)
                                 <div class="cn-img">

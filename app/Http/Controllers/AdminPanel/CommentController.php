@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\AdminPanel;
 
 use App\Http\Controllers\Controller;
-use App\Models\Faq;
+use App\Models\Comment;
 use Illuminate\Http\Request;
 
-class FaqController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +15,12 @@ class FaqController extends Controller
      */
     public function index()
     {
-        $data=Faq::all();
+        //
+        $data=Comment::all();
 
-        return view('admin.faq.index',[
+        return view('admin.comment.index',[
             'data'=> $data
         ]);
-
     }
 
     /**
@@ -30,11 +30,7 @@ class FaqController extends Controller
      */
     public function create()
     {
-        $data=Faq::all();
-
-        return view('admin.faq.create',[
-            'data'=> $data
-        ]);
+        //
     }
 
     /**
@@ -45,58 +41,48 @@ class FaqController extends Controller
      */
     public function store(Request $request)
     {
-        $data= new Faq();
-
-        $data->question= $request->question;
-        $data->answer= $request->answer;
-        $data->status= $request->status;
-        $data->save();
-        return redirect('admin/faq');
+        //
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
      */
     public function show($id)
     {
-        //
+        $data=Comment::find($id);
+        return view('admin.comment.show',[
+            'data'=> $data
+        ]);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $data=Faq::find($id);
-        return view('admin.faq.edit',[
-            'data'=> $data
-
-        ]);
-
+        //
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Faq  $faq
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $data = Faq::find($id);
-        $data->question= $request->question;
-        $data->answer= $request->answer;
-        $data->status= $request->status;
+        $data=Comment::find($id);
+        $data->status=$request->status;
         $data->save();
-        return redirect('admin/faq');
+        return redirect(route('admin.comment.show',['id'=>$id]));
     }
 
     /**

@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Comment;
+use App\Models\Faq;
 use App\Models\News;
 use App\Models\Message;
 use App\Models\Settings;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -81,6 +84,19 @@ class HomeController extends Controller
 
         );
     }
+    public function faq()
+    {
+        $setting=Settings::first();
+        $datalist=Faq::all();
+        return view('home.faq',[
+
+                'setting'=>$setting,
+                'datalist'=>$datalist
+
+            ]
+
+        );
+    }
 
     public function storemessage(Request $request)
     {
@@ -97,14 +113,34 @@ class HomeController extends Controller
     return redirect()->route('contact')->with('info','Your message has been sent, Thank You. ');
 
     }
+
+
+    public function storecomment(Request $request)
+    {
+        $data = new Comment();
+        $data->user_id = Auth::Id();
+        $data->news_id = $request->input('news_id');
+        $data->rate = $request->input('rate');
+        $data->comment = $request->input('comment');
+        $data->ip = $request->ip();
+        $data-> save();
+
+        return redirect()->route('news',['id'=>$request->input('news_id')])->with('info','Your comment has been sent, Thank You. ');
+
+    }
+
+
+
     public function news($id)
     {
         $data=News::find($id);
         $images=DB::table('images')->where('news_id',$id)->get();
+        $reviews=Comment::where('news_id',$id)->where('status','True')->get();
         return view('home.news',[
 
                 'data'=>$data,
                 'images' => $images,
+                'reviews'=> $reviews
 
 
             ]

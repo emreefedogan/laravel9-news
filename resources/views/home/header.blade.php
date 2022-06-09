@@ -15,8 +15,8 @@
                     <a href="{{route('contact')}}">Contact</a>
                     <a href="{{route('about')}}">About</a>
                     <a href="{{route('references')}}">References</a>
-                    <a href="{{route('references')}}">LOGIN</a>
-                    <a href="{{route('references')}}">REGISTER</a>
+                    <a href="{{route('login')}}">LOGIN</a>
+                    <a href="{{route('register')}}">REGISTER</a>
                 </div>
             </div>
         </div>
@@ -84,7 +84,7 @@
                     <a href="{{route('about')}}" class="nav-item nav-link">About</a>
                     <a href="{{route('references')}}" class="nav-item nav-link">References</a>
 
-                    <a href="single-page.html" class="nav-item nav-link">FAQ</a>
+                    <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
 
                 </div>
 

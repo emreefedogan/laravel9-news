@@ -9,6 +9,7 @@ use App\Models\News;
 use App\Models\Message;
 use App\Models\Settings;
 use Illuminate\Http\Request;
+use Illuminate\Queue\RedisQueue;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -146,5 +147,15 @@ class HomeController extends Controller
             ]
 
         );
+    }
+
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
     }
 }

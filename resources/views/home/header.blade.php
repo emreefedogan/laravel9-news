@@ -3,21 +3,40 @@
 <div class="top-bar">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col">
+                <div class="tb-contact">
+                    @auth
+                        <a href="/">Welcome {{Auth::user()->name}}</a>
+
+                        <a href="/logout" class="btn btn-danger">LOGOUT</a>
+                    @else
+                        <a href="/loginuser" class="btn btn-dark"><strong style="color: #ffffff">LOGIN  </strong></a>
+
+                        <a href="/registeruser" class="btn btn-light"><strong style="color: #000000">REGISTER</strong></a>
+                    @endauth
+
+                </div>
+            </div>
+
+            <div class="tb-menu">
+
+                <a href="{{route('contact')}}">Contact</a>
+                <a href="{{route('about')}}">About</a>
+                <a href="{{route('references')}}">References</a>
+
+
                 <div class="tb-contact">
                     <p><i class="fas fa-envelope"></i>info@mail.com</p>
                     <p><i class="fas fa-phone-alt"></i>+012 345 6789</p>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="tb-menu">
 
-                    <a href="{{route('contact')}}">Contact</a>
-                    <a href="{{route('about')}}">About</a>
-                    <a href="{{route('references')}}">References</a>
-                    <a href="{{route('login')}}">LOGIN</a>
-                    <a href="{{route('register')}}">REGISTER</a>
                 </div>
+
+
+            </div>
+
+
+
+        </div>
             </div>
         </div>
     </div>

@@ -172,6 +172,9 @@
         color: darkorange;
     }
 </style>
+@php
+$average= $data->comment->average('rate');
+@endphp
 
     <!-- Breadcrumb Start -->
     <div class="breadcrumb-wrap">
@@ -179,7 +182,7 @@
             <ul class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                 <li class="breadcrumb-item"><a href="#">{{$data->category->title}}</a></li>
-                <li class="breadcrumb-item active">{{$data->title}}</li>
+                <li class="breadcrumb-item active">{{$data->title}}   @if($average) Rating :  ( {{$average}} / {{number_format($average,1)}} ) @endif</li>
             </ul>
         </div>
     </div>
@@ -207,7 +210,7 @@
 
 
 
-                    <h1 class="comments-title">Comments</h1>
+                    <h1 class="comments-title">Comments ( {{$data->comment->count('id')}}  )</h1>
                     @foreach($reviews as $rs)
                     <div class="be-comment">
                         <div class="be-img-comment">

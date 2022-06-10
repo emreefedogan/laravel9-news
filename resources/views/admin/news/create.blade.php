@@ -72,7 +72,13 @@
 
                         <div class="col-12">
                             <label for="type" class="form-label">Type</label>
-                            <input type="text" class="form-control" name="type">
+                            <div class="col-sm-10">
+                                <select class="form-select" aria-label="Default select example" name="type">
+                                    <option>koseyazisi</option>
+                                    <option>haberyazisi</option>
+
+                                </select>
+                            </div>
                         </div>
 
                         <div class="col-12">

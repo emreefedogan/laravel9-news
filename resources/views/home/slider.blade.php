@@ -6,6 +6,7 @@
 
                 <div class="row tn-slider">
                     @foreach($sliderdata as $rs)
+                        @if($rs->status=='True')
                     <div class="col-md-6">
                         <div class="tn-img">
                             <img src="{{Storage::url($rs->image)}}" height="350px" />
@@ -14,6 +15,7 @@
                             </div>
                         </div>
                     </div>
+                        @endif
                     @endforeach
 
                 </div>
@@ -29,7 +31,7 @@
                 <div class="row">
 
                     @foreach($sliderdata as $rs)
-
+                        @if($rs->status=='True')
                     <div class="col-md-6">
                         <div class="tn-img">
                             <img src="{{Storage::url($rs->image)}}" />
@@ -38,6 +40,7 @@
                             </div>
                         </div>
                     </div>
+                        @endif
                     @endforeach
                 </div>
                 </div>

@@ -16,14 +16,16 @@
                 <div class="col-lg-9">
                     <div class="row">
                         @foreach($news as $rs)
-                        <div class="col-md-4">
-                            <div class="mn-img">
-                                <img src="{{Storage::url($rs->image)}}" />
-                                <div class="mn-title">
-                                    <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                            @if($rs->status=='True')
+                                <div class="col-md-4">
+                                    <div class="mn-img">
+                                        <img src="{{Storage::url($rs->image)}}" />
+                                        <div class="mn-title">
+                                            <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
+                            @endif
                         @endforeach
 
 

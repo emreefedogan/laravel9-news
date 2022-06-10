@@ -26,13 +26,14 @@
                     <h2>LASTEST NEWS</h2>
                        <div class="row cn-slider">
                             @foreach($newslist1 as $orta)
+                               @if($orta->status=='True')
                                 <div class="cn-img">
                                     <img src="{{Storage::url($orta->category->image)}}" height="300px" />
                                     <div class="cn-title">
                                         <a href="{{route('news',['id'=>$orta->id])}}">{{$orta->title}}</a>
                                     </div>
                                 </div>
-
+                               @endif
                         @endforeach
 
 
@@ -52,7 +53,9 @@
             <div class="row">
                 <div class="col-lg-9">
                     <div class="row">
+
                         @foreach($newslist1 as $rs)
+                            @if($rs->status=='True')
                         <div class="col-md-4">
                             <div class="mn-img">
                                 <img src="{{Storage::url($rs->image)}}" href="{{route('news',['id'=>$rs->id])}}" />
@@ -61,6 +64,7 @@
                                 </div>
                             </div>
                         </div>
+                            @endif
                         @endforeach
 
                     </div>
@@ -86,9 +90,37 @@
             </div>
         </div>
     </div>
+
+
+
+    <div class="cat-news" >
+        <div class="container">
+            <div class="row">
+    <div class="col-md-12" style="align: center">
+
+
+        <h2>COLUMNIST - (Köşe Yazıları) </h2>
+        <div class="row cn-slider">
+            @foreach($newslist1 as $orta)
+                @if($orta->type=='koseyazisi'&&$orta->status=='True')
+                    <div class="cn-img">
+                        <img src="{{Storage::url($orta->image)}}" height="300px" />
+                        <div class="cn-title">
+                            <a href="{{route('news',['id'=>$orta->id])}}">{{$orta->title}}</a>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+
+
+        </div>
+    </div>
+            </div>
+        </div>
+    </div>
     <!-- Main News End-->
 
-<!-- Tab News Start-->
+<!-- Tab News Start
 <div class="tab-news">
     <div class="container">
         <div class="row">
@@ -286,7 +318,7 @@
 </div>
 <!-- Tab News Start-->
 
-
+    -->
 @endsection
 
 

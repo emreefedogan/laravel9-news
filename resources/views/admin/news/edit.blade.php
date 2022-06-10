@@ -59,20 +59,29 @@
                     </div>
                     <div class="col-12">
                         <label for="keywords" class="form-label">Keywords</label>
-                        <input type="text" class="form-control" name="keywords" value="{{$data->keyword}}">
+                        <input type="text" class="form-control" name="keywords" value="{{$data->keywords}}">
                     </div>
                     <div class="col-12">
                         <label for="description" class="form-label">Description</label>
                         <input type="text" class="form-control" name="description" value="{{$data->description}}">
                     </div>
+
                     <div class="col-12">
-                        <label for="Type" class="form-label">Type</label>
-                        <input type="text" class="form-control" name="type" value="{{$data->type}}">
+                        <label class="col-sm-2 col-form-label">Status : {{$data->type}}</label>
+                        <div class="col-sm-12">
+                            <select class="form-select" aria-label="Default select example" name="type">
+                                <option >koseyazisi</option>
+                                <option >haberyazisi</option>
+
+                            </select>
+                        </div>
                     </div>
+
                     <div class="col-12">
                         <label for="Slug" class="form-label">Slug</label>
                         <input type="text" class="form-control" name="slug" value="{{$data->slug}}">
                     </div>
+
                     <div class="col-12">
                         <label for="textarea"  class="form-label">Detail</label>
                         <textarea  class="textarea" id="detail" name="detail">{{$data->detail}}</textarea>

@@ -94,5 +94,11 @@ class CommentController extends Controller
     public function destroy($id)
     {
         //
+
+        $data = Comment::find($id);
+        //Storage::delete($data->image);
+        $data->delete();
+        return redirect('userpanel/reviews');
+
     }
 }

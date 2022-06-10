@@ -32,7 +32,7 @@ Route::post('/storecomment', [HomeController::class,'storecomment'])->name('stor
 Route::view('/loginuser', 'home.login');
 Route::view('/registeruser', 'home.register');
 Route::get('/logout', [HomeController::class,'logout'])->name('logout');
-Route::view('/loginadmin', 'admin.login');
+Route::view('/loginadmin', 'admin.login')->name('loginadmin');
 Route::post('/loginadmincheck', [HomeController::class,'loginadmincheck'])->name('loginadmincheck');
 
 
@@ -54,7 +54,9 @@ Route::middleware('auth')->group(function (){
 
     //**************USER Routes CONTROLLER**
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function (){
-        Route::get('/', [UserController::class,'index'])->name('index');
+        Route::get('/','index')->name('index');
+        Route::get('/reviews','reviews')->name('reviews');
+        Route::get('/reviewdestroy/{id}','reviewdestroy')->name('reviewdestroy');
     });
 //**************ADMIN PANEL CONTROLLER**
     Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function (){

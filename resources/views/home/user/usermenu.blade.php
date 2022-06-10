@@ -35,9 +35,9 @@
         </li>
 
         <li>
-            <a class="dropdown-item d-flex align-items-center" href="/faq">
+            <a class="dropdown-item d-flex align-items-center" href="{{route('userpanel.reviews')}}">
                 <i class="bi bi-question-circle"></i>
-                <span>FAQ?</span>
+                <span>My Comments</span>
             </a>
         </li>
         <li>

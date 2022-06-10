@@ -29,7 +29,6 @@
                         <th scope="col">Name</th>
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
-                        <th scope="col">Status</th>
                         <th scope="col">Delete</th>
                         <th scope="col">Show</th>
                     </tr>
@@ -47,7 +46,6 @@
                             @endforeach
 
                         </td>
-                        <td>{{$rs->status}}</td>
 
                         <td><a href="{{route('admin.user.destroy',['id'=>$rs->id])}}" class="btn btn-danger"
                                onclick="return confirm('Deleting Are You Sure ?')"> Delete </a></td>

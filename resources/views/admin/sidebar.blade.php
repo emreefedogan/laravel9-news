@@ -40,14 +40,14 @@
 
         <!-- begin Profile Page Nav -->
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/admin/users">
+            <a class="nav-link collapsed" href="/admin/user">
                 <i class="bi bi-person"></i>
                 <span>Users</span>
             </a>
         </li><!-- End Profile Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="/admin/comments">
+            <a class="nav-link collapsed" href="/admin/comment">
                 <i class="bx bxs-comment-dots"></i>
                 <span>Comments</span>
             </a>

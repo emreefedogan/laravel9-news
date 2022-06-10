@@ -49,9 +49,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-
+Route::middleware('auth')->group(function (){
 //**************ADMIN PANEL CONTROLLER**
-Route::prefix('/admin')->name('admin.')->group(function (){
+Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function (){
 
         Route::get('/', [AdminHomeController::class,'index'])->name('index');
 //**************General Routes CONTROLLER**
@@ -132,5 +132,5 @@ Route::prefix('/admin')->name('admin.')->group(function (){
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
 
     });
-
+});
 });

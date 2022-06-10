@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
 use App\Http\Controllers\AdminPanel\CategoryController as AdminCategoryController;
@@ -50,8 +51,13 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 Route::middleware('auth')->group(function (){
+
+    //**************USER Routes CONTROLLER**
+    Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function (){
+        Route::get('/', [UserController::class,'index'])->name('index');
+    });
 //**************ADMIN PANEL CONTROLLER**
-Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function (){
+    Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function (){
 
         Route::get('/', [AdminHomeController::class,'index'])->name('index');
 //**************General Routes CONTROLLER**

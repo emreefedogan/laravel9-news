@@ -5,8 +5,9 @@
         <div class="row">
             <div class="col">
                 <div class="tb-contact">
+
                     @auth
-                        <a href="/">Welcome {{Auth::user()->name}}</a>
+                        <a href="/userpanel">Welcome {{Auth::user()->name}}</a>
 
                         <a href="/logout" class="btn btn-danger">LOGOUT</a>
                     @else
@@ -28,6 +29,8 @@
                 <div class="tb-contact">
                     <p><i class="fas fa-envelope"></i>info@mail.com</p>
                     <p><i class="fas fa-phone-alt"></i>+012 345 6789</p>
+
+
 
                 </div>
 
@@ -66,6 +69,11 @@
                     <input type="text" placeholder="Search">
                     <button><i class="fa fa-search"></i></button>
                 </div>
+
+
+
+
+
             </div>
         </div>
     </div>
@@ -105,6 +113,11 @@
 
                     <a href="{{route('faq')}}" class="nav-item nav-link">FAQ</a>
 
+
+                    <script src="http://127.0.0.1:8000/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                    <script src="http://127.0.0.1:8000/assets/js/adminmain.js"></script>
+                   <!-- MENU BURAYA GELECEK -->
+
                 </div>
 
                 <div class="social ml-auto">
@@ -113,6 +126,7 @@
                     <a href=""><i class="fab fa-linkedin-in"></i></a>
                     <a href=""><i class="fab fa-instagram"></i></a>
                     <a href=""><i class="fab fa-youtube"></i></a>
+
                 </div>
             </div>
         </nav>

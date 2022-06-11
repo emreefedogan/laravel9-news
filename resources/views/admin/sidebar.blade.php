@@ -30,13 +30,14 @@
             </ul>
         </li><!-- End Components Nav -->
 
-
         <li class="nav-item">
             <a class="nav-link collapsed" href="/admin/category">
                 <i class="bx bxs-category"></i>
                 <span>Categories</span>
             </a>
         </li><!-- End Contact Page Nav -->
+
+
 
         <!-- begin Profile Page Nav -->
         <li class="nav-item">
@@ -66,7 +67,6 @@
                 <span>Messages</span>
             </a>
         </li>
-
 
 
         <li class="nav-item">

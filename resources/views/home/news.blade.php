@@ -291,40 +291,20 @@ $average= $data->comment->average('rate');
 
 
                     <div class="sn-related">
-                        <h2>Related News</h2>
+                        <h2>Last News</h2>
                         <div class="row sn-slider">
+                     @foreach($newslist1 as $rs)
                             <div class="col-md-4">
                                 <div class="sn-img">
-                                    <img src="img/news-350x223-1.jpg" />
+                                    <img height="300px" src="{{Storage::url($rs->image)}}" />
                                     <div class="sn-title">
-                                        <a href="">Interdum et fames ac ante</a>
+                                        <a href="" >{{$rs->title}}</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <div class="sn-img">
-                                    <img src="img/news-350x223-2.jpg" />
-                                    <div class="sn-title">
-                                        <a href="">Interdum et fames ac ante</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="sn-img">
-                                    <img src="img/news-350x223-3.jpg" />
-                                    <div class="sn-title">
-                                        <a href="">Interdum et fames ac ante</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="sn-img">
-                                    <img src="img/news-350x223-4.jpg" />
-                                    <div class="sn-title">
-                                        <a href="">Interdum et fames ac ante</a>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
+
+
                         </div>
                     </div>
                 </div>
@@ -332,207 +312,84 @@ $average= $data->comment->average('rate');
                 <div class="col-lg-4">
                     <div class="sidebar">
                         <div class="sidebar-widget">
-                            <h2 class="sw-title">In This Category</h2>
+                            <h2 class="sw-title">Other News</h2>
                             <div class="news-list">
+
+                                @foreach($newslist1 as $rs)
+
+
                                 <div class="nl-item">
                                     <div class="nl-img">
-                                        <img src="img/news-350x223-1.jpg" />
+                                        <img src="{{Storage::url($rs->image)}}" />
                                     </div>
                                     <div class="nl-title">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                        <a href="">{{$rs->title}}</a>
                                     </div>
                                 </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="img/news-350x223-2.jpg" />
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="img/news-350x223-3.jpg" />
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="img/news-350x223-4.jpg" />
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    </div>
-                                </div>
-                                <div class="nl-item">
-                                    <div class="nl-img">
-                                        <img src="img/news-350x223-5.jpg" />
-                                    </div>
-                                    <div class="nl-title">
-                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                    </div>
-                                </div>
+                                @endforeach
+
+
                             </div>
                         </div>
 
-                        <div class="sidebar-widget">
-                            <div class="image">
-                                <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image"></a>
-                            </div>
-                        </div>
 
                         <div class="sidebar-widget">
                             <div class="tab-news">
                                 <ul class="nav nav-pills nav-justified">
                                     <li class="nav-item">
-                                        <a class="nav-link active" data-toggle="pill" href="#featured">Featured</a>
+                                        <a class="nav-link active" data-toggle="pill" href="#featured">Köşe Yazıları</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#popular">Popular</a>
+                                        <a class="nav-link" data-toggle="pill" href="#popular">Haber Yazıları</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" data-toggle="pill" href="#latest">Latest</a>
+                                        <a class="nav-link" data-toggle="pill" href="#latest">Son Haberler</a>
                                     </li>
                                 </ul>
 
                                 <div class="tab-content">
                                     <div id="featured" class="container tab-pane active">
+                                        @foreach($koseyazisi as $kose)
                                         <div class="tn-news">
                                             <div class="tn-img">
-                                                <img src="img/news-350x223-1.jpg" />
+                                                <img src="{{Storage::url($kose->image)}}" />
                                             </div>
                                             <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                                <a href="">{{$kose->title}}</a>
                                             </div>
                                         </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-2.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-3.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-4.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-5.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
+                                        @endforeach
+
                                     </div>
                                     <div id="popular" class="container tab-pane fade">
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-4.jpg" />
+                                        @foreach($newslist1 as $kose)
+                                            <div class="tn-news">
+                                                <div class="tn-img">
+                                                    <img src="{{Storage::url($kose->image)}}" />
+                                                </div>
+                                                <div class="tn-title">
+                                                    <a href="">{{$kose->title}}</a>
+                                                </div>
                                             </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-3.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-2.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-1.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-2.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                     <div id="latest" class="container tab-pane fade">
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-3.jpg" />
+                                        @foreach($newslist1 as $kose)
+                                            <div class="tn-news">
+                                                <div class="tn-img">
+                                                    <img src="{{Storage::url($kose->image)}}" />
+                                                </div>
+                                                <div class="tn-title">
+                                                    <a href="">{{$kose->title}}</a>
+                                                </div>
                                             </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-4.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-5.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-4.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
-                                        <div class="tn-news">
-                                            <div class="tn-img">
-                                                <img src="img/news-350x223-3.jpg" />
-                                            </div>
-                                            <div class="tn-title">
-                                                <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
-                                            </div>
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="sidebar-widget">
-                            <div class="image">
-                                <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image"></a>
-                            </div>
-                        </div>
+
 
                         @php
                             $mainCategories= \App\Http\Controllers\HomeController::categorylist();
@@ -549,22 +406,14 @@ $average= $data->comment->average('rate');
                             </div>
                         </div>
 
-                        <div class="sidebar-widget">
-                            <div class="image">
-                                <a href="https://htmlcodex.com"><img src="img/ads-2.jpg" alt="Image"></a>
-                            </div>
-                        </div>
+
 
                         <div class="sidebar-widget">
                             <h2 class="sw-title">Tags Cloud</h2>
                             <div class="tags">
-                                <a href="">National</a>
-                                <a href="">International</a>
-                                <a href="">Economics</a>
-                                <a href="">Politics</a>
-                                <a href="">Lifestyle</a>
-                                <a href="">Technology</a>
-                                <a href="">Trades</a>
+                                @foreach($newslist1 as $rs)
+                                <a href="">{{$rs->title}}</a>
+                                @endforeach
                             </div>
                         </div>
                     </div>

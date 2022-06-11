@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Comment;
+use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -107,5 +109,23 @@ class UserController extends Controller
         //Storage::delete($data->image);
         $data->delete();
         return redirect('userpanel/reviews');
+    }
+    public function koseyazaricreate()
+    {
+
+        $data=Category::all();
+
+        return view('home.user.koseyazaricreate',[
+            'data'=> $data
+        ]);
+
+    }
+    public function koseyazarishow($id)
+    {
+        $data=News::find($id);
+
+        return view('admin.news.show',[
+            'data'=> $data
+        ]);;
     }
 }

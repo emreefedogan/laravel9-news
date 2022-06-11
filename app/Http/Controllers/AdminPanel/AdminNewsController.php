@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\News;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class AdminNewsController extends Controller
@@ -34,9 +35,11 @@ class AdminNewsController extends Controller
     {
         $data=Category::all();
 
-        return view('admin.news.create',[
-            'data'=> $data
-        ]);
+
+            return view('admin.news.create', [
+                'data' => $data
+            ]);
+
     }
 
     /**
@@ -63,7 +66,10 @@ class AdminNewsController extends Controller
         $data->slug= $request->slug;
         $data->status= $request->status;
         $data->save();
-        return redirect('admin/news');
+
+            return redirect('admin/news');
+
+
     }
 
     /**

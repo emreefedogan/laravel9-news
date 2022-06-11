@@ -19,11 +19,12 @@ class HomeController extends Controller
     {
 
         $category=Category::find($id);
-        $news=DB::table('news')->where('category_id',$id)->get();
+        $news=DB::table('news')->where('category_id',$id)->where('status','True')->get();
+
         return view('home.categorynews',[
 
             'category'=>$category,
-            'news'=>$news
+            'news'=>$news,
 
         ]
         );
@@ -36,17 +37,25 @@ class HomeController extends Controller
 
     public function home()
     {
-        $sliderdata=News::limit(4)->get();
-        $newslist1=News::limit(6)->get();
+        $sliderdata=News::limit(4)->orderBy('created_at', 'desc')->where('status','True')->get();
+        $newslist1=News::limit(40)->orderBy('created_at', 'desc')->where('status','True')->get();
+        $status=DB::table('news')->where('status','True')->get();
+        $koseyazisi=News::limit(40)->where('type','koseyazisi')->where('status','True')->get();
         $setting=Settings::first();
+
+
         return view('home.index',[
 
             'sliderdata'=>$sliderdata,
             'newslist1'=>$newslist1,
+             'status'=>$status,
+            'koseyazisi'=>$koseyazisi,
             'setting'=>$setting,
             ]
 
         );
+
+
     }
 
     public function about()
@@ -137,11 +146,17 @@ class HomeController extends Controller
         $data=News::find($id);
         $images=DB::table('images')->where('news_id',$id)->get();
         $reviews=Comment::where('news_id',$id)->where('status','True')->get();
+        $newslist1=News::limit(40)->orderBy('created_at', 'desc')->where('status','True')->get();
+        $status=DB::table('news')->where('status','True')->get();
+        $koseyazisi=News::limit(40)->where('type','koseyazisi')->where('status','True')->get();
         return view('home.news',[
 
                 'data'=>$data,
                 'images' => $images,
-                'reviews'=> $reviews
+                'reviews'=> $reviews,
+                'newslist1'=>$newslist1,
+                'status'=>$status,
+                'koseyazisi'=>$koseyazisi,
 
 
             ]

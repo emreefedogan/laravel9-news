@@ -57,7 +57,20 @@ Route::middleware('auth')->group(function (){
         Route::get('/','index')->name('index');
         Route::get('/reviews','reviews')->name('reviews');
         Route::get('/reviewdestroy/{id}','reviewdestroy')->name('reviewdestroy');
+
     });
+
+    Route::prefix('/user')->name('user.')->controller(HomeUserController::class)->group(function (){
+        Route::get('/','index')->name('index');
+        Route::post('/addrole/{id}', 'addrole')->name('addrole');
+        Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name('destroyrole');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/destroy/{id}', 'destroy')->name('destroy');
+
+    });
+
 //**************ADMIN PANEL CONTROLLER**
     Route::middleware('admin')->prefix('/admin')->name('admin.')->group(function (){
 

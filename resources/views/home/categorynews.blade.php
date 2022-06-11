@@ -16,7 +16,7 @@
                 <div class="col-lg-9">
                     <div class="row">
                         @foreach($news as $rs)
-                            @if($rs->status=='True')
+                            @if($rs->status='True')
                                 <div class="col-md-4">
                                     <div class="mn-img">
                                         <img src="{{Storage::url($rs->image)}}" />

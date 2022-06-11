@@ -34,7 +34,7 @@
                         @if($rs->status=='True')
                     <div class="col-md-6">
                         <div class="tn-img">
-                            <img src="{{Storage::url($rs->image)}}" />
+                            <img src="{{Storage::url($rs->image)}}" height="175px" />
                             <div class="tn-title">
                                 <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
                             </div>

@@ -40,6 +40,20 @@
                 <span>My Comments</span>
             </a>
         </li>
+
+        <li>
+            <a class="dropdown-item d-flex align-items-center" href="user/create">
+                <i class="bi bi-question-circle"></i>
+                <span>News Create</span>
+            </a>
+        </li>
+        <li>
+            <a class="dropdown-item d-flex align-items-center" href="userpanel/news">
+                <i class="bi bi-question-circle"></i>
+                <span>My News</span>
+            </a>
+        </li>
+
         <li>
             <hr class="dropdown-divider">
         </li>

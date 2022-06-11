@@ -5,6 +5,7 @@ use App\Http\Controllers\AdminPanel\CommentController;
 use App\Http\Controllers\AdminPanel\FaqController;
 use App\Http\Controllers\AdminPanel\MessageController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeUserController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminPanel\HomeController as AdminHomeController;
@@ -56,18 +57,19 @@ Route::middleware('auth')->group(function (){
     Route::prefix('userpanel')->name('userpanel.')->controller(UserController::class)->group(function (){
         Route::get('/','index')->name('index');
         Route::get('/reviews','reviews')->name('reviews');
+        Route::get('/news','news')->name('news');
         Route::get('/reviewdestroy/{id}','reviewdestroy')->name('reviewdestroy');
 
     });
 
     Route::prefix('/user')->name('user.')->controller(HomeUserController::class)->group(function (){
         Route::get('/','index')->name('index');
-        Route::post('/addrole/{id}', 'addrole')->name('addrole');
-        Route::get('/destroyrole/{uid}/{rid}', 'destroyrole')->name('destroyrole');
-        Route::get('/edit/{id}', 'edit')->name('edit');
-        Route::get('/show/{id}', 'show')->name('show');
-        Route::post('/update/{id}', 'update')->name('update');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store', 'store')->name('store');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::post('/update/{id}','update')->name('update');
         Route::get('/destroy/{id}', 'destroy')->name('destroy');
+        Route::get('/show/{id}', 'show')->name('show');
 
     });
 

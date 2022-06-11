@@ -39,6 +39,26 @@ class UserController extends Controller
         );
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function news()
+    {
+        $news=News::where('user_id','=',Auth::id())->get();
+
+        return view('home.user.news',[
+
+                'news'=>$news,
+
+            ]
+
+        );
+    }
+
+
+
 
 
 

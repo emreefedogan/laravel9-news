@@ -1,4 +1,6 @@
-
+@if(empty($setting))
+@php $setting = \App\Models\Settings::first(); @endphp
+@endif
 <!-- Top Bar Start -->
 <div class="top-bar">
     <div class="container">
@@ -26,12 +28,17 @@
                 <a href="{{route('references')}}">References</a>
 
 
+
                 <div class="tb-contact">
-                    <p><i class="fas fa-envelope"></i>info@mail.com</p>
-                    <p><i class="fas fa-phone-alt"></i>+012 345 6789</p>
 
+@if($setting->email)
 
+                        <p><i class="fas fa-envelope"></i>{{$setting->email}}</p>
+                    @endif
+@if($setting->phone)
+                    <p><i class="fas fa-phone-alt"></i>{{$setting->phone}}</p>
 
+                    @endif
                 </div>
 
 
@@ -121,11 +128,22 @@
                 </div>
 
                 <div class="social ml-auto">
-                    <a href=""><i class="fab fa-twitter"></i></a>
-                    <a href=""><i class="fab fa-facebook-f"></i></a>
-                    <a href=""><i class="fab fa-linkedin-in"></i></a>
-                    <a href=""><i class="fab fa-instagram"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
+                    @if($setting->twitter)
+                        <a href="{{$setting->twitter}}"><i class="fab fa-twitter"></i></a>
+                    @endif
+                    @if($setting->facebook)
+                        <a href="{{$setting->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                    @endif
+                    @if($setting->linkedin)
+                        <a href="{{$setting->linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+                    @endif
+
+                    @if($setting->instagram)
+                        <a href="{{$setting->instagram}}"><i class="fab fa-instagram"></i></a>
+                    @endif
+                    @if($setting->youtube)
+                        <a href="{{$setting->youtube}}"><i class="fab fa-youtube"></i></a>
+                    @endif
 
                 </div>
             </div>

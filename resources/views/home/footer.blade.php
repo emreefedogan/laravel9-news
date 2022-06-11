@@ -1,3 +1,7 @@
+@if(empty($setting))
+    @php $setting = \App\Models\Settings::first(); @endphp
+@endif
+
 <!-- Footer Start -->
 <div class="footer">
     <div class="container">
@@ -6,15 +10,32 @@
                 <div class="footer-widget">
                     <h3 class="title">Get in Touch</h3>
                     <div class="contact-info">
-                        <p><i class="fa fa-map-marker"></i>123 News Street, NY, USA</p>
-                        <p><i class="fa fa-envelope"></i>info@example.com</p>
-                        <p><i class="fa fa-phone"></i>+123-456-7890</p>
+                        @if($setting->address)
+                        <p><i class="fa fa-map-marker"></i>{{$setting->address}}</p>
+                        @endif
+                            @if($setting->email)
+                        <p><i class="fa fa-envelope"></i>{{$setting->email}}</p>
+                            @endif
+                            @if($setting->phone)
+                        <p><i class="fa fa-phone"></i>{{$setting->phone}}</p>
+                            @endif
                         <div class="social">
-                            <a href=""><i class="fab fa-twitter"></i></a>
-                            <a href=""><i class="fab fa-facebook-f"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in"></i></a>
-                            <a href=""><i class="fab fa-instagram"></i></a>
-                            <a href=""><i class="fab fa-youtube"></i></a>
+                            @if($setting->twitter)
+                            <a href="{{$setting->twitter}}"><i class="fab fa-twitter"></i></a>
+                            @endif
+                                @if($setting->facebook)
+                            <a href="{{$setting->facebook}}"><i class="fab fa-facebook-f"></i></a>
+                                @endif
+                                @if($setting->linkedin)
+                            <a href="{{$setting->linkedin}}"><i class="fab fa-linkedin-in"></i></a>
+                                @endif
+
+                                @if($setting->instagram)
+                            <a href="{{$setting->instagram}}"><i class="fab fa-instagram"></i></a>
+                                @endif
+                                @if($setting->youtube)
+                            <a href="{{$setting->youtube}}"><i class="fab fa-youtube"></i></a>
+                                @endif
                         </div>
                     </div>
                 </div>

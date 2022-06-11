@@ -17,7 +17,7 @@ class HomeController extends Controller
 {
     public static function categorynews($id)
     {
-
+        $setting=Settings::first();
         $category=Category::find($id);
         $news=DB::table('news')->where('category_id',$id)->where('status','True')->get();
 
@@ -25,7 +25,7 @@ class HomeController extends Controller
 
             'category'=>$category,
             'news'=>$news,
-
+                'setting'=>$setting,
         ]
         );
 
@@ -34,6 +34,8 @@ class HomeController extends Controller
     {
         return Category::where('parent_id', '=', 0)->with('children')->get();
     }
+
+
 
     public function home()
     {
@@ -143,12 +145,14 @@ class HomeController extends Controller
 
     public function news($id)
     {
+
         $data=News::find($id);
         $images=DB::table('images')->where('news_id',$id)->get();
         $reviews=Comment::where('news_id',$id)->where('status','True')->get();
         $newslist1=News::limit(40)->orderBy('created_at', 'desc')->where('status','True')->get();
         $status=DB::table('news')->where('status','True')->get();
         $koseyazisi=News::limit(40)->where('type','koseyazisi')->where('status','True')->get();
+        $setting=Settings::first();
         return view('home.news',[
 
                 'data'=>$data,
@@ -157,6 +161,7 @@ class HomeController extends Controller
                 'newslist1'=>$newslist1,
                 'status'=>$status,
                 'koseyazisi'=>$koseyazisi,
+                'setting'=>$setting,
 
 
             ]

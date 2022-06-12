@@ -64,7 +64,7 @@ class HomeUserController extends Controller
         $data->detail= $request->detail;
         $data->type= $request->type;
         $data->slug= $request->slug;
-        $data->status= $request->status;
+        $data->status= 'False';
         $data->save();
 
 
@@ -126,7 +126,7 @@ class HomeUserController extends Controller
         $data->detail= $request->detail;
         $data->type= $request->type;
         $data->slug= $request->slug;
-        $data->status= $request->status;
+        $data->status= 'False';
         $data->save();
         return redirect('/userpanel/news');
     }

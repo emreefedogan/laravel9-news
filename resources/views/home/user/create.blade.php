@@ -94,16 +94,6 @@
                             </div>
                         </div>
 
-                    <div class="col-12">
-                        <label class="col-sm-2 col-form-label">Status : </label>
-                        <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example" name="status">
-                                <option >True</option>
-                                <option >False</option>
-
-                            </select>
-                        </div>
-                    </div>
 
 
                     <div class="text-center">

@@ -21,7 +21,7 @@
 
                 <div class="row">
                     <div class="col-md-4">
-                    <h1>User Menu & User Comments, Review</h1>
+                    <h1>My News  & My News Edit &  My News Create</h1>
 
                            @include('home.user.usermenu')
 

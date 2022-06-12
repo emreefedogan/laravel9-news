@@ -194,7 +194,7 @@ class HomeController extends Controller
             return redirect()->intended('/admin');
         }
 
-        return back()->withErrors([
+        return back()->with([
             'error' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }

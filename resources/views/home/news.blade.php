@@ -298,7 +298,7 @@ $average= $data->comment->average('rate');
                                 <div class="sn-img">
                                     <img height="300px" src="{{Storage::url($rs->image)}}" />
                                     <div class="sn-title">
-                                        <a href="" >{{$rs->title}}</a>
+                                        <a href="{{route('news',['id'=>$rs->id])}}" >{{$rs->title}}</a>
                                     </div>
                                 </div>
                             </div>
@@ -323,7 +323,7 @@ $average= $data->comment->average('rate');
                                         <img src="{{Storage::url($rs->image)}}" />
                                     </div>
                                     <div class="nl-title">
-                                        <a href="">{{$rs->title}}</a>
+                                        <a href="{{route('news',['id'=>$rs->id])}}">{{$rs->title}}</a>
                                     </div>
                                 </div>
                                 @endforeach

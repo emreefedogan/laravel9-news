@@ -73,11 +73,52 @@
             </div>
             <div class="col-lg-3 col-md-4">
                 <div class="b-search">
-                    <input type="text" placeholder="Search">
-                    <button><i class="fa fa-search"></i></button>
+                    <form id="f1" name="f1" action="javascript:void()" onsubmit="if(this.t1.value!=null &amp;&amp; this.t1.value!='')
+parent.findString(this.t1.value);return false;">
+                    <input type="text" id="t1" name="t1" placeholder="Search">
+                   <button class="fa fa-search" type="submit" name="b1" value="Search"></button>
+                    </form>
                 </div>
 
+                <script>
+                    var TRange=null;
 
+                    function findString (str) {
+                        if (parseInt(navigator.appVersion)<4) return;
+                        var strFound;
+                        if (window.find) {
+
+                            // CODE FOR BROWSERS THAT SUPPORT window.find
+
+                            strFound=self.find(str);
+                            if (!strFound) {
+                                strFound=self.find(str,0,1);
+                                while (self.find(str,0,1)) continue;
+                            }
+                        }
+                        else if (navigator.appName.indexOf("Microsoft")!=-1) {
+
+                            // EXPLORER-SPECIFIC CODE
+
+                            if (TRange!=null) {
+                                TRange.collapse(false);
+                                strFound=TRange.findText(str);
+                                if (strFound) TRange.select();
+                            }
+                            if (TRange==null || strFound==0) {
+                                TRange=self.document.body.createTextRange();
+                                strFound=TRange.findText(str);
+                                if (strFound) TRange.select();
+                            }
+                        }
+                        else if (navigator.appName=="Opera") {
+                            alert ("Opera browsers not supported, sorry...")
+                            return;
+                        }
+                        if (!strFound) alert ("String '"+str+"' not found!")
+                        return;
+                    }
+                </script>
 
 
 

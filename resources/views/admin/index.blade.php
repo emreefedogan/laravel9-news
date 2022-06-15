@@ -1,3 +1,10 @@
+@php
+$count= App\Models\News::count();
+@endphp
+@php
+    $countcategories= App\Models\Category::count();
+@endphp
+
 @extends('layouts.adminbase')
 
 @section('title', 'News Admin Panel')
@@ -10,7 +17,7 @@
             <h1>Blank Page</h1>
             <nav>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item">Pages</li>
                     <li class="breadcrumb-item active">Blank</li>
                 </ol>
@@ -23,8 +30,10 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Example Card</h5>
-                            <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                            <h5 class="card-title">News</h5>
+
+                            <p>{{$count}}</p>
+
                         </div>
                     </div>
 
@@ -34,12 +43,14 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Example Card</h5>
-                            <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+                            <h5 class="card-title">Categories</h5>
+                            <p>{{$countcategories}}</p>
                         </div>
                     </div>
 
                 </div>
+
+
             </div>
         </section>
 
